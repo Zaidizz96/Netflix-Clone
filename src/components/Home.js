@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieList from "./MovieList";
+import FavList from "./FavList";
 
 function Home() {
     const [data, setData] = useState([]);
@@ -13,9 +14,22 @@ function Home() {
         getTrendingMovies();
     }, [])
 
+    function commentHandler(newMoviesObj , id){
+        data.map((e) => {
+            if(e.id === id){
+                e.comment = newMoviesObj.userComment; 
+                return e;
+            }
+            else {
+                return e;
+            }
+        })
+    }
+
     return (
         <div > 
-            <MovieList data = {data}/>
+            <MovieList commentHandler={commentHandler} data = {data}/>
+            <FavList data = {data} />
         </div>
     )
 }

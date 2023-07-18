@@ -9,7 +9,7 @@ function Movie(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
 
   return (
     <div className="card-view">
@@ -18,15 +18,18 @@ function Movie(props) {
         <Card.Body>
           <Card.Title>{props.obj.title}</Card.Title>
           <Card.Text>
-           <strong>Release Date </strong> : {props.obj.release_date}
+            <strong>Release Date </strong> : {props.obj.release_date}
           </Card.Text>
           <Button variant="primary" onClick={handleShow}>Add To Favorite</Button>
         </Card.Body>
       </Card>
-      <ModalMovie handleClose={handleClose} 
-                  handleShow={handleShow} 
-                  show={show} 
-                  props={props.obj} />
+      <ModalMovie
+        commentHandler={props.commentHandler}
+        handleClose={handleClose}
+        handleShow={handleShow}
+        show={show}
+        props={props.obj}
+      />
     </div>
   )
 }
