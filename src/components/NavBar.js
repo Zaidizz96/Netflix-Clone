@@ -6,10 +6,10 @@ function NavBar(){
     return(
         <Navbar bg="primary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="/">Navbar</Navbar.Brand>
+          <Navbar.Brand href="/">NetFlix</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/FavList">FavList</Nav.Link>
+            <Nav.Link href="/FavList">Favorite</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

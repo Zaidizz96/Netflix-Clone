@@ -6,7 +6,7 @@ function MovieList(props) {
         <div className='movie-list'>
             {props.data.map((obj, i) => {
                 if (obj.title !== undefined || obj.release_date !== undefined) {
-                    return <Movie obj={obj} key={i} />
+                    return <Movie commentHandler={props.commentHandler} obj={obj} key={i} />
                 }
             })}
         </div>
